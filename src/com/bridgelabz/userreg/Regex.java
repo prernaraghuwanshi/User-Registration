@@ -10,7 +10,7 @@ public class Regex {
 	private static final Pattern LNAME_PATTERN = Pattern.compile("^[A-Z]{1}[a-z]{2,}$");
 	private static final Pattern EMAIL_PATTERN = Pattern.compile("^[a-z0-9]+[_+-.]{0,1}[a-z0-9]+@[a-z0-9]+.[a-z]{2,}(.[a-z]{2}){0,1}$");
 	private static final Pattern MOBILE_PATTERN = Pattern.compile("^[0-9]{2} [0-9]{10}$");
-	private static final Pattern PASSWORD_PATTERN = Pattern.compile("^(?=.*?[A-Z]).{8,}$");
+	private static final Pattern PASSWORD_PATTERN = Pattern.compile("^(?=.*?[A-Z])(?=.*?[0-9]).{8,}$");
 	private static Scanner sc;
     
 	private boolean checkFirstName(String s) {
