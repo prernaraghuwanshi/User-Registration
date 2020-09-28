@@ -10,8 +10,8 @@ public class Regex {
 	private static final Pattern LNAME_PATTERN = Pattern.compile("^[A-Z]{1}[a-z]{2,}$");
 	private static final Pattern EMAIL_PATTERN = Pattern.compile("^[a-z0-9]+[_+-.]{0,1}[a-z0-9]+@[a-z0-9]+.[a-z]{2,}(.[a-z]{2}){0,1}$");
 	private static final Pattern MOBILE_PATTERN = Pattern.compile("^[0-9]{2} [0-9]{10}$");
-	private static final Pattern PASSWORD_PATTERN = Pattern.compile("^(?=.*?[A-Z])(?=.*?[0-9])([^A-Za-z0-9]{1}).{8,}$");
-	//private static final Pattern PASSWORD_PATTERN = Pattern.compile("^([A-Z]+[a-z]*[0-9]+).{8,}$");
+	private static final Pattern PASSWORD_PATTERN = Pattern.compile("^(?=.*?[A-Z])(?=.*?[0-9]).{8,}$");
+	private static final Pattern PASSWORD_PATTERN1 = Pattern.compile("[A-Za-z0-9]*[^A-Za-z0-9]{1}[A-Za-z0-9]*");
 	private static Scanner sc;
     
 	private boolean checkFirstName(String s) {
@@ -27,7 +27,7 @@ public class Regex {
 		return MOBILE_PATTERN.matcher(s).matches();
 	}
 	private boolean checkPassword(String s) {
-		return PASSWORD_PATTERN.matcher(s).matches();
+		return PASSWORD_PATTERN.matcher(s).matches()&&PASSWORD_PATTERN1.matcher(s).matches();
 	}
 	public static void main(String args[]) {
 		System.out.println("Welcome to User Registration!");
